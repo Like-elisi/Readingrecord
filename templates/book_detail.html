@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Detail{% endblock %}
+
+{% block main %}
+    <style>
+        .custom-main {
+            max-width: 1000px;
+            margin: 0 auto; /* 居中显示 */
+        }
+    </style>
+    <div class="custom-main">
+        <h1>Book detail</h1>
+
+
+        <!-- 第一行：书籍详情 -->
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card" style="width: 20rem;">
+                    {% if book.cover %}
+                        <img src="{{ book.cover.url }}" class="card-img-top" alt="{{ book.title }}"
+                             style="height:300px">
+                    {% else %}
+                        <img src="{% static 'img/OIP.jpg' %}" class="card-img-top" alt="Default Cover">
+                    {% endif %}
+                    <div class="card-body" style="height: 180px;">
+                        <h4 class="book-title">{{ book.title }}</h4>
+                        <p class="author">Author: {{ book.author }}</p>
+                        <p class="pagenumber">Page number: {{ book.pagenumber }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <h4>More information</h4>
+                <p>Type: {{ book.type }}</p>
+                <p>Book language: {{ book.language }}</p>
+                <p>Published year: {{ book.publishyear }}</p>
+                <span class="badge bg-success" style="font-size: 18px;width: 180px">{{ book.statues }}</span>
+                <a href="{% url 'recording:timer' book.id %}" class="btn btn-primary mt-3 d-block"
+                   style="width: 170px;">Start timing</a>
+                <a href="{% url 'recording:create_excerpt' book.id %}" class="btn btn-primary mt-3 d-block"
+                   style="width: 170px;">Create book excerpts</a>
+                <form method="post" action="{% url 'recording:delete_book' book.id %}"
+                      onsubmit="return confirm('Are you sure to delete this book? After deletion, all related book excerpts will also be deleted.');">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger mt-3 d-block" style="width: 170px;">Remove Book</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- 分割线 -->
+        <hr class="my-4">
+
+        <!-- 第二行：书摘区域 -->
+        <h2>Excerpt</h2>
+        <!-- 搜索框表单：method=GET, name="q" 用于传递搜索关键字 -->
+        <form method="GET" class="mb-3" role="search" action="{% url 'recording:book_detail' book.id %}">
+            <div class="input-group">
+                <input type="search" name="q" class="form-control" placeholder="Search for book excerpt titles...">
+                <button class="btn btn-outline-secondary" type="submit">search</button>
+            </div>
+        </form>
+
+
+        <div class="row">
+            {% for excerpt in excerpts %}
+                <div class="col-12 mb-3">
+                    <!-- 整个卡片可点击，点击后跳转到对应书摘编辑页面 -->
+                    <a href="{% url 'recording:excerpt_detail' excerpt.id %}"
+                       class="text-decoration-none text-dark">
+                        <div class="p-3 rounded shadow-sm bg-white">
+                            <!-- 第一行：显示创建时间和页码 -->
+                            <div class="d-flex justify-content-between">
+                                <small class="text-muted">{{ excerpt.created_at|date:"Y-m-d H:i:s" }}</small>
+                                <small class="text-muted">Page {{ excerpt.page_number }} </small>
+                            </div>
+                            <!-- 第二行：显示书摘标题 -->
+                            <h5 class="mt-2 mb-0">{{ excerpt.title }}</h5>
+                        </div>
+                    </a>
+                </div>
+            {% empty %}
+                <p>No excerpts found.</p>
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ReadingRecord</title>
+    <link rel="stylesheet" href="{% static 'bootstrap5/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap5/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap5/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+<header class="p-3 mb-3 border-bottom text-bg-light">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                <img src="{% static 'img/OIP.jpg' %}" alt="" height="80">
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">Homepage</a></li>
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">Statistics</a></li>
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">Book Excerpts&Reviews</a></li>
+            </ul>
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            </form>
+            <div class="dropdown text-end">
+                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle show"
+                   data-bs-toggle="dropdown" aria-expanded="true">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small show" data-popper-placement="bottom-end"
+                    style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 34px, 0px);">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid bg-white p-3 rounded ">
+
+    <div style="max-width:350px;" class="m-auto">
+        <h1>Login</h1>
+        <form action="" method="post">
+            <div class="mb-3">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="mb-3">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" name="remember" value="1" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Remember me
+                </label>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary w-100">Login</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+</body>
+</html>
+
+{#注册#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ReadingRecord</title>
+    <link rel="stylesheet" href="{% static 'bootstrap5/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap5/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap5/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+<header class="p-3 mb-3 border-bottom text-bg-light">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                <img src="{% static 'img/OIP.jpg' %}" alt="" height="80">
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">Homepage</a></li>
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">Statistics</a></li>
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">Book Excerpts&Reviews</a></li>
+            </ul>
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            </form>
+            <div class="dropdown text-end">
+                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle show"
+                   data-bs-toggle="dropdown" aria-expanded="true">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small show" data-popper-placement="bottom-end"
+                    style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 34px, 0px);">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="container bg-white p-3 rounded ">
+
+    <div style="max-width:350px;" class="m-auto">
+        <h1>Register</h1>
+        <form action="" method="post">
+            <div class="mb-3">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Username">
+            </div>
+            <div class="mb-3">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="mb-3">
+                <label>Verification</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Verification"
+                           aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button"  >Get verification</button>
+                </div>
+            </div>
+          
+            <div class="mb-3">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password">
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-primary w-100">Register</button>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>
+
+{#添加书籍#}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>添加书籍</title>
+    <!-- 视口设定，让页面在移动端有合适的缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    >
+</head>
+<body>
+<header class="p-3 mb-3 border-bottom text-bg-light">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                <img src="{% static 'img/OIP.jpg' %}" alt="" height="80">
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">Homepage</a></li>
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">Statistics</a></li>
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">Book Excerpts&Reviews</a></li>
+
+
+            </ul>
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            </form>
+            <div class="dropdown text-end">
+                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle show"
+                   data-bs-toggle="dropdown" aria-expanded="true">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small show" data-popper-placement="bottom-end"
+                    style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 34px, 0px);">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- 页面内容主体 -->
+<main class="container-fluid bg-white p-3 rounded ">
+    <span class="navbar-brand mb-0 fs-5">添加书籍</span>
+    <h6 class="text-muted mb-3">基本信息</h6>
+
+    <div class="card p-3">
+        <!-- 图片在第一行居中 -->
+        <div class="text-center mb-3">
+            <img
+                    src="{% static 'img/OIP.jpg' %}"
+                    alt="封面图"
+                    class="mx-auto d-block"
+                    style="width: 200px; height: 150px; object-fit:cover;"
+            >
+        </div>
+
+        <!-- 右侧：书籍信息表单 -->
+        <div class="col">
+            <!-- 如果在 Django 中使用，需要加 method="POST" 并加 {% csrf_token %} -->
+            <form>
+                <!-- 书名 -->
+                <div class="mb-3">
+                    <label for="bookTitle" class="form-label">书名</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="bookTitle"
+                            placeholder="请输入书名"
+                    >
+                </div>
+
+                <!-- 作者 -->
+                <div class="mb-3">
+                    <label for="author" class="form-label">作者</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="author"
+                            placeholder="请输入作者"
+                    >
+                </div>
+
+                <!-- 出版社 -->
+                <div class="mb-3">
+                    <label for="publishyear" class="form-label">出版年份</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="publishyear"
+                            placeholder="请输入出版年份"
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <label for="type" class="form-label">类型</label>
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="type"
+                            placeholder="请输入类型"
+                    >
+                </div>
+
+                <!-- 字数 -->
+                <div class="mb-3">
+                    <label for="wordCount" class="form-label">页数</label>
+                    <input
+                            type="number"
+                            class="form-control"
+                            id="wordCount"
+                            placeholder="请输入页数"
+                    >
+                </div>
+                <div class="mb-3">
+                    <label for="status" class="form-label">书籍状态</label>
+                    <select id="status" name="status" class="form-select">
+                        <option value="read">已读</option>
+                        <option value="want">想读</option>
+                        <option value="reading">正在读</option>
+                        <option value="abandoned">弃读</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary">保存</button>
+            </form>
+        </div>
+    </div>
+</main>
+</div>
+
+<!-- Bootstrap JS (含 Popper) -->
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>
+
+
+{#图书信息#}
+{% extends 'base.html' %}
+
+{% block title %}Add Book{% endblock %}
+
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    >
+{% endblock %}
+
+{% block main %}
+    <style>
+        .custom-main {
+            max-width: 800px;
+            margin: 0 auto; /* 居中显示 */
+        }
+    </style>
+    <div class="custom-main">
+        <span class="navbar-brand mb-0 fs-5">添加书籍</span>
+        <h6 class="text-muted mb-3">基本信息</h6>
+
+        <div class="card p-3">
+            <!-- 图片在第一行居中 -->
+            <div class="text-center mb-3">
+                <img
+                    src="{% static 'img/OIP.jpg' %}"
+                    alt="封面图"
+                    class="mx-auto d-block"
+                    style="width: 200px; height: 150px; object-fit:cover;"
+                >
+            </div>
+
+            <!-- 书籍信息表单 -->
+            <div class="col">
+                <!-- 如果在 Django 中使用，需要加 method="POST" 并加 {% csrf_token %} -->
+                <form method="POST">
+                    {% csrf_token %}
+                    <!-- 书名 -->
+                    <div class="mb-3">
+                        <label for="bookTitle" class="form-label">书名</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="bookTitle"
+                            placeholder="请输入书名"
+                        >
+                    </div>
+
+                    <!-- 作者 -->
+                    <div class="mb-3">
+                        <label for="author" class="form-label">作者</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="author"
+                            placeholder="请输入作者"
+                        >
+                    </div>
+
+                    <!-- 出版年份 -->
+                    <div class="mb-3">
+                        <label for="publishyear" class="form-label">出版年份</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="publishyear"
+                            placeholder="请输入出版年份"
+                        >
+                    </div>
+
+                    <!-- 类型 -->
+                    <div class="mb-3">
+                        <label for="type" class="form-label">类型</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="type"
+                            placeholder="请输入类型"
+                        >
+                    </div>
+
+                    <!-- 页数 -->
+                    <div class="mb-3">
+                        <label for="wordCount" class="form-label">页数</label>
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="wordCount"
+                            placeholder="请输入页数"
+                        >
+                    </div>
+
+                    <!-- 书籍状态下拉框 -->
+                    <div class="mb-3">
+                        <label for="status" class="form-label">书籍状态</label>
+                        <select id="status" name="status" class="form-select">
+                            <option value="read">已读</option>
+                            <option value="want">想读</option>
+                            <option value="reading">正在读</option>
+                            <option value="abandoned">弃读</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary">保存</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{#书摘#}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>书摘编辑</title>
+  <!-- 视口设定，方便移动端自适应 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+  >
+</head>
+<body>
+<!-- 顶部导航栏：书封面 + 书名 + 保存按钮 -->
+<nav class="navbar navbar-light bg-light px-3 justify-content-center">
+  <div class="d-flex flex-column align-items-center">
+  <!-- 图片 -->
+  <img 
+    src="{% static 'img/OIP.jpg' %}" 
+    alt="Book Cover" 
+    class="rounded mb-2" 
+    style="width: 200px; height: 300px;"
+  >
+  <!-- 书名 -->
+  <h1 class="fs-1 fw-bold my-4">Book title</h1>
+</div>
+
+  
+</nav>
+
+<!-- 表单内容主体 -->
+<div class="container mt-3">
+  <!-- 如果在 Django 中，需要使用 method="POST" 并添加 {% csrf_token %} -->
+  <form method="POST" action="">
+    <!-- Django 模板中可加：{% csrf_token %} -->
+
+    <!-- 1. 输入页码 -->
+    <div class="mb-3">
+      <label for="pageNumber" class="form-label">请输入页码</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="pageNumber" 
+        name="page_number" 
+        placeholder="请填写页码"
+      >
+    </div>
+
+    <!-- 2. 编辑题目（替代原先的“选择目录”） -->
+    <div class="mb-3">
+      <label for="title" class="form-label">编辑题目</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="title" 
+        name="title" 
+        placeholder="请填写题目"
+      >
+    </div>
+
+    <!-- 3. 输入书摘 -->
+    <div class="mb-3">
+      <label for="excerpt" class="form-label">输入书摘</label>
+      <textarea 
+        class="form-control" 
+        id="excerpt" 
+        name="excerpt" 
+        rows="3" 
+        placeholder="请输入书摘内容"
+      ></textarea>
+    </div>
+
+    <!-- 4. 输入心得 -->
+    <div class="mb-3">
+      <label for="comment" class="form-label">输入心得</label>
+      <textarea 
+        class="form-control" 
+        id="comment" 
+        name="comment" 
+        rows="3" 
+        placeholder="请输入阅读心得"
+      ></textarea>
+    </div>
+
+    <!-- 也可在此处添加“保存”按钮；若只想用顶栏保存，可省略此按钮 -->
+    
+    <button type="submit" class="btn btn-primary">保存</button>
+    
+  </form>
+</div>
+
+<!-- Bootstrap JS (含 Popper) -->
+<script 
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>
+
+
+
+
+{% extends 'base.html' %}
+
+
+{% block title %}Register{% endblock %}
+
+{% block head %}
+    {% load static %}
+    <script src="{% static 'jquery/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'js/register.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+	<div style="max-width:350px;" class="m-auto">
+        <h1>Register</h1>
+        <form action="" method="post">
+            <div class="mb-3">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Username">
+            </div>
+            <div class="mb-3">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="mb-3">
+                <label>Verification</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Verification"
+                           aria-describedby="button-addon2">
+                    <button type="button" id="captcha-btn" class="btn btn-outline-secondary">Get verification</button>
+
+                </div>
+            </div>
+          
+            <div class="mb-3">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password">
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-primary w-100" >Register</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+
+
+ <script src="{% static 'jquery/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'js/register.js' %}"></script>
+
+
+{#                <li>#}
+{#                    <a href="#" class="nav-link link-body-emphasis">#}
+{#                        <svg class="bi pe-none me-2" width="16" height="16">#}
+{#                            <use xlink:href="#Wanttoread"></use>#}
+{#                        </svg>#}
+{#                        Want to Read#}
+{#                    </a>#}
+{#                </li>#}
+{#                <li>#}
+{#                    <a href="#" class="nav-link link-body-emphasis">#}
+{#                        <svg class="bi pe-none me-2" width="16" height="16">#}
+{#                            <use xlink:href="#Haveread"></use>#}
+{#                        </svg>#}
+{#                        Have Read#}
+{#                    </a>#}
+{#                </li>#}
+{#                <li>#}
+{#                    <a href="#" class="nav-link link-body-emphasis">#}
+{#                        <svg class="bi pe-none me-2" width="16" height="16">#}
+{#                            <use xlink:href="#Readdeprecated"></use>#}
+{#                        </svg>#}
+{#                        Read-deprecated#}
+{#                    </a>#}
+{#                </li>#}
+
+
+
+
+
+{#                    <a href="#" class="nav-link active" aria-current="page">#}
+{#                        <svg class="bi pe-none me-2" width="16" height="16">#}
+{#                            <use xlink:href="#Reading"></use>#}
+{#                        </svg>#}
+{#                        Reading#}
+{#                    </a>#}
+
+
+
+{% extends 'base.html' %}
+
+{% block title %}ReadingRecord{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary col-md-3 col-lg-2 bg-light border-end min-vh-100 position-relative"
+             style="width: 250px;">
+            <a href="/"
+               class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi pe-none me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <span class="fs-4">My Book</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="{% url 'recording:index' %}?status=all" class="nav-link {% if status_param == 'all' or not status_param %}active{% endif %}">
+                    ALL <span class="badge bg-secondary">{{ books|length }}</span>
+                </a>
+                </li>
+
+            
+             {% for status in statuses %}
+            <li class="nav-item">
+                <a href="{% url 'recording:index' %}?status={{ status.id }}" class="nav-link {% if status_param == status.id|stringformat:"s" %}active{% endif %}">
+                    {{ status.name }} <span class="badge bg-secondary">{{ status.book_count }}</span>
+                </a>
+            </li>
+            {% endfor %}
+            </ul>
+            <a href="{% url 'recording:add_book' %}"
+               class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center"
+               style="width: 70px; height: 70px; position: absolute; bottom: 60px; right: 20px; z-index: 10;">
+                <i class="bi bi-plus-lg" style="font-size: 1.5rem;"></i>
+            </a>
+        </div>
+        <div class="container bg-white p-3 rounded col-md-9 col-lg-10">
+            <h1>Booklist</h1>
+
+            <!-- 书籍卡片示例 -->
+       
+            <div class="row row-cols-4 g-3 rounded">
+                {% for book in books %}
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            {% if book.cover %}
+                                <img src="{{ book.cover.url }}" class="card-img-top" alt="{{ book.title }}" style="height: 300px">
+                            {% else %}
+                                <img src="{% static 'img/OIP.jpg' %}" class="card-img-top" alt="Default Cover">
+                            {% endif %}
+                            <div class="card-body" style="height: 200px">
+                                <h5 class="card-title">{{ book.title }}</h5>
+                                <p class="card-text">{{ book.author }}</p>
+                                <span class="badge bg-success"
+                                      style="font-size: 1rem; width:100px">{{ book.statues }}</span>
+                                <a href="{% url 'recording:book_detail' book.id %}"
+                                   class="btn btn-primary d-block mt-2" style="width: 110px">Particulars</a>
+
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p>No books found.</p>
+                {% endfor %}
+            </div>
+      
+
+
+
+        </div>
+
+
+    </div>
+
+{% endblock %}
+
+
+
+{% extends 'base.html' %}
+
+{% block title %}ReadingRecord{% endblock %}
+
+{% block main %}
+<div class="row">
+    <!-- 左侧导航区域 -->
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary col-md-3 col-lg-2 bg-light border-end min-vh-100 position-relative"
+         style="width: 250px;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi pe-none me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+            <span class="fs-4">My Book</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <!-- ALL选项 -->
+            <li class="nav-item">
+                <a href="{% url 'recording:index' %}?status=all" class="nav-link d-flex justify-content-between align-items-center {% if status_param == 'all' or not status_param %}active{% endif %}">
+                    <span>ALL</span>
+                    <span class="badge bg-secondary">{{ books|length }}</span>
+                </a>
+            </li>
+            {% for status in statuses %}
+            <li class="nav-item">
+                <a href="{% url 'recording:index' %}?status={{ status.id }}" class="nav-link d-flex justify-content-between align-items-center {% if status_param == status.id|stringformat:"s" %}active{% endif %}">
+                    <span>{{ status.name }}</span>
+                    <span class="badge bg-secondary">{{ status.book_count }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'recording:add_book' %}"
+           class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center"
+           style="width: 70px; height: 70px; position: absolute; bottom: 60px; right: 20px; z-index: 10;">
+            <i class="bi bi-plus-lg" style="font-size: 1.5rem;"></i>
+        </a>
+    </div>
+    <!-- 右侧书籍列表区域 -->
+    <div class="container bg-white p-3 rounded col-md-9 col-lg-10">
+        <h1>Booklist</h1>
+        <div class="row row-cols-4 g-3 rounded">
+            {% for book in books %}
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        {% if book.cover %}
+                            <img src="{{ book.cover.url }}" class="card-img-top" alt="{{ book.title }}" style="height: 300px;">
+                        {% else %}
+                            <img src="{% static 'img/OIP.jpg' %}" class="card-img-top" alt="Default Cover">
+                        {% endif %}
+                        <div class="card-body" style="height: 200px;">
+                            <h5 class="card-title">{{ book.title }}</h5>
+                            <p class="card-text">{{ book.author }}</p>
+                            <span class="badge bg-success" style="font-size: 1rem; width:100px">{{ book.statues }}</span>
+                            <a href="{% url 'recording:book_detail' book.id %}" class="btn btn-primary d-block mt-2" style="width: 110px;">Particulars</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No books found.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+@require_http_methods(['GET', 'POST'])
+@login_required(login_url='/auth/login')
+def add_book(request):
+    if request.method == 'GET':
+        statues = BookStatuses.objects.all()
+        return render(request, template_name='addbook.html', context={'statues': statues})
+    else:
+        form = NewBookForm(request.POST, request.FILES)
+        if form.is_valid():
+            title = form.cleaned_data.get('title')
+            author = form.cleaned_data.get('author')
+            publishyear = form.cleaned_data.get('publishyear')
+            statues_instance = form.cleaned_data.get('statues')
+            language = form.cleaned_data.get('language')
+            cover = form.cleaned_data.get('cover')
+            type = form.cleaned_data.get('type')
+            pagenumber = form.cleaned_data.get('pagenumber')
+            book = NewBook.objects.create(title=title, author=author, publishyear=publishyear, language=language,
+                                          cover=cover, type=type, statues=statues_instance, pagenumber=pagenumber)
+            return redirect('recording:index')
+        else:
+            print(form.errors)
+            return JsonResponse({'code': 400, "message": "验证失败"})
+
+
+def add_book(request):
+    if request.method == 'POST':
+        form = NewBookForm(request.POST, request.FILES)
+        if form.is_valid():
+            book = form.save(commit=False)
+            # 确保用户已登录，否则这里会出错
+            book.user = request.user
+            book.save()
+            return redirect('recording:book_detail', book.id)
+        else:
+            # 处理表单错误
+            pass
+    else:
+        form = NewBookForm()
+    return render(request, 'addbook.html', {'form': form})
+
+
+
+from django.db.models import Count, Q
+from .models import NewBook, BookStatuses
+
+def index(request):
+    status_param = request.GET.get('status', 'all')
+    if request.user.is_authenticated:
+        # 返回当前用户的书籍
+        books = NewBook.objects.filter(user=request.user)
+        # 为每个状态注解当前用户下的书籍数量
+        statuses = BookStatuses.objects.annotate(
+            book_count=Count('books', filter=Q(books__user=request.user))
+        )
+    else:
+        books = NewBook.objects.none()
+        # 未登录时，所有状态数量显示为 0
+        statuses = BookStatuses.objects.all()
+        for status in statuses:
+            status.book_count = 0
+
+    # 如果过滤条件不是 all，则对书籍进行过滤
+    if status_param != 'all':
+        books = books.filter(statues_id=status_param)
+
+    return render(request, 'index.html', {
+        'books': books,
+        'statuses': statuses,
+        'status_param': status_param,
+    })
+
+def index(request):
+    status_param = request.GET.get('status', 'all')
+
+    all_books_count = NewBook.objects.count()
+    # 获取所有状态，并注解每个状态下书籍数量（注意这里 related_name 根据你的模型设置，如无则使用 newbook_set）
+    statuses = BookStatuses.objects.annotate(book_count=Count('newbook'))
+
+    if request.user.is_authenticated:
+        books = NewBook.objects.filter(user=request.user)
+    else:
+        books = NewBook.objects.none()
+
+    # 根据 status 参数过滤书籍，如果 status 为 'all' 则不过滤
+    if status_param != 'all':
+        books = books.filter(statues_id=status_param)
+
+    return render(request, 'index.html', {
+        'books': books,
+        'statuses': statuses,
+        'status_param': status_param,
+        'all_books_count': all_books_count,
+    })
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>阅读计时</title>
+    <!-- 视口设定，确保在移动端也有合适的缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 引入 Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    >
+    <!-- 引入 Bootstrap Icons （用于图标）-->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    >
+
+    <style>
+        /* 自定义一些样式，模拟移动端居中布局，最大宽度 400px */
+        .app-container {
+            max-width: 400px;
+        }
+
+        /* 让封面图片有点圆角，若需要可自行调整 */
+        .book-cover {
+            border-radius: 8px;
+        }
+
+        /* 圆形大按钮 */
+        .circle-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 计时器字体更大一点 */
+        .timer-display {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container app-container text-center py-4">
+    <!-- Bootstrap Nav Tabs: 计时 / 书摘 -->
+    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button
+                    class="nav-link active"
+                    id="timer-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#timerTab"
+                    type="button"
+                    role="tab"
+                    aria-controls="timerTab"
+                    aria-selected="true"
+            >
+                计时
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="myTabContent">
+        <!-- 计时 Tab -->
+        <div
+                class="tab-pane fade show active"
+                id="timerTab"
+                role="tabpanel"
+                aria-labelledby="timer-tab"
+        >
+
+
+            <!-- 书籍封面 -->
+            <img
+                    src="{{ book.cover.url }}"  alt="{{ book.title }}"
+                    class="card-img-top"
+                    style="width: 200px; height: auto;"
+            >
+
+            <!-- 计时器显示 -->
+            <div id="timerDisplay" class="timer-display">00:00</div>
+
+
+            <!-- 底部暂停 / 停止两个圆形按钮 -->
+            <div class="d-flex justify-content-center mt-4">
+                <!-- 暂停按钮 -->
+                <button
+                        id="pauseBtn"
+                        class="btn btn-primary circle-btn me-4"
+                        title="暂停"
+                >
+                    <i class="bi bi-pause-fill"></i>
+                </button>
+                <!-- 停止按钮 -->
+                <button
+                        id="stopBtn"
+                        class="btn btn-danger circle-btn"
+                        title="停止"
+                >
+                    <i class="bi bi-stop-fill"></i>
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- Bootstrap JS (含 Popper) -->
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script>
+    // ========== 简单计时器逻辑 ========== //
+    let seconds = 0;
+    let timerInterval = null;
+    let isPaused = false;
+
+    const timerDisplay = document.getElementById('timerDisplay');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const stopBtn = document.getElementById('stopBtn');
+
+    // 页面加载后自动开始计时
+    window.addEventListener('DOMContentLoaded', () => {
+        startTimer();
+    });
+
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            seconds++;
+            updateDisplay();
+        }, 1000);
+    }
+
+    function updateDisplay() {
+        // 将秒数格式化为 mm:ss
+        const mm = String(Math.floor(seconds / 60)).padStart(2, '0');
+        const ss = String(seconds % 60).padStart(2, '0');
+        timerDisplay.textContent = mm + ":" + ss;
+    }
+
+    // 暂停 / 继续
+    pauseBtn.addEventListener('click', function () {
+        if (!isPaused) {
+            // 暂停
+            clearInterval(timerInterval);
+            pauseBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+            isPaused = true;
+        } else {
+            // 继续
+            startTimer();
+            pauseBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+            isPaused = false;
+        }
+    });
+
+    // 停止
+    stopBtn.addEventListener('click', function () {
+        clearInterval(timerInterval);
+        seconds = 0;
+        updateDisplay();
+        pauseBtn.disabled = true;
+        stopBtn.disabled = true;
+    });
+</script>
+</body>
+</html>

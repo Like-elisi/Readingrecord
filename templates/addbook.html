@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Book{% endblock %}
+
+
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    >
+    <script src="{% static 'jquery/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'js/addbook.js' %}"></script>
+
+{% endblock %}
+
+{% block main %}
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <style>
+            .custom-main {
+                max-width: 800px;
+                margin: 0 auto; /* 居中显示 */
+            }
+        </style>
+        <div class="custom-main">
+            <span class="navbar-brand mb-0 fs-5">Add book</span>
+            <h6 class="text-muted mb-3">Basic information</h6>
+
+            <div class="card p-3">
+                <!-- 图片在第一行居中 -->
+                <div class="text-center mb-3">
+                    <!-- 显示当前封面预览 -->
+                    <img id="cover-preview"
+                         src="{% static 'img/OIP.jpg' %}"
+                         alt="封面图"
+                         class="mx-auto d-block"
+                         style="width: 250px; height: 300px; object-fit: cover;">
+                    <!-- 上传图片的控件 -->
+                    <label for="cover-upload" class="btn btn-secondary mt-2">Upload Cover</label>
+                    <input type="file" id="cover-upload" name="cover" accept="image/*" class="d-none" >
+{#                    <input type="file" id="cover-upload" name="cover" accept="image/*" class="form-control mt-2" >#}
+                </div>
+
+                <script>
+                    // 当选择文件后，更新图片预览
+                    document.getElementById('cover-upload').addEventListener('change', function (event) {
+                        const file = event.target.files[0];
+                        if (file) {
+                            const preview = document.getElementById('cover-preview');
+                            preview.src = URL.createObjectURL(file);
+                        }
+                    });
+                </script>
+
+                <!-- 书籍信息表单 -->
+                <div class="col">
+                    <!-- 书名 -->
+                    <div class="mb-3">
+                        <label for="bookTitle" class="form-label">Book title</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="bookTitle"
+                                placeholder="Please enter the book title"
+                                name="title"
+                        >
+                    </div>
+
+                    <!-- 作者 -->
+                    <div class="mb-3">
+                        <label for="author" class="form-label">author</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="author"
+                                placeholder="Please enter the book author"
+                                name="author"
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="pagenumber" class="form-label">page number</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="author"
+                                placeholder="Please enter the page number"
+                                name="pagenumber"
+                        >
+                    </div>
+                    <!-- 出版年份 -->
+                    <div class="mb-3">
+                        <label for="publishyear" class="form-label">year of publication</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="publishyear"
+                                placeholder="Please enter the year of publication"
+                                name="publishyear"
+                        >
+                    </div>
+
+                    <!-- 类型 -->
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Primary classification</label>
+                        <select id="category" name="category" class="form-select">
+                            <option value="">Please select a primary category</option>
+                            {% for category in categories %}
+                                <option value="{{ category.id }}">{{ category.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subcategory" class="form-label">Secondary classification</label>
+                        <select id="subcategory" name="subcategory" class="form-select" disabled>
+                            <option value="">Please select a secondary category</option>
+                        </select>
+                    </div>
+                    <script>
+                            document.getElementById("category").addEventListener("change", function () {
+                                let categoryId = this.value;
+                                let subcategorySelect = document.getElementById("subcategory");
+
+                                // 清空选项
+                                subcategorySelect.innerHTML = '<option value="">请选择二级分类</option>';
+                                subcategorySelect.disabled = true;
+
+                                if (categoryId) {
+                                    fetch(`/get_subcategories/?parent_id=` + categoryId)
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            if (data.length > 0) {
+                                                subcategorySelect.disabled = false;
+                                                data.forEach(subcategory => {
+                                                    let option = new Option(subcategory.name, subcategory.id);  // 使用 subcategory.id 作为 value
+                                                    subcategorySelect.appendChild(option);
+                                                });
+                                            }
+                                        });
+                                }
+                            });
+
+
+                    </script>
+                
+                
+                    <div class="mb-3">
+                        <label for="language" class="form-label">Language</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="language"
+                                placeholder="Please enter the language of the book"
+                                name="language"
+                        >
+                    </div>
+
+                    <!-- 书籍状态下拉框 -->
+                    <div class="mb-3">
+                        <label for="statues" class="form-label">Reading status</label>
+                        <select id="statues" name="statues" class="form-select">
+                            {% for statues in statues %}
+                                <option value="{{ statues.id }}">{{ statues.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+         <button class="btn btn-primary" id="save">save</button>
+                </div> 
+            </div> 
+        </div>
+    </form>
+
+
+
+
+
+{% endblock %}

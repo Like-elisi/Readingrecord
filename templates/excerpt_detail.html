@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Book excerpt details{% endblock %}
+
+{% block main %}
+<div class="container my-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Book excerpt details</h2>
+        </div>
+        <div class="card-body">
+            <p class="mb-3">Belonging books: <strong>{{ book.title }}</strong></p>
+            <hr>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-flex justify-content-end gap-2 mt-3">
+                    <button type="submit" class="btn btn-primary">save change</button>
+                    <button type="submit" name="delete" class="btn btn-danger" onclick="return confirm('Are you sure to delete?');">delete</button>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer text-end">
+            <a href="{% url 'recording:book_detail' book.id %}" class="btn btn-secondary">Return to book details</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

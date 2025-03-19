@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}ReadingRecord{% endblock %}
+
+{% block main %}
+<div class="row">
+    <!-- 左侧导航区域 -->
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary col-md-3 col-lg-2 bg-light border-end min-vh-100 position-relative"
+         style="width: 250px;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi pe-none me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+            <span class="fs-4">My Book</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <!-- ALL选项 -->
+            <li class="nav-item">
+                <a href="{% url 'recording:index' %}?status=all" class="nav-link d-flex justify-content-between align-items-center {% if status_param == 'all' or not status_param %}active{% endif %}">
+                    <span>ALL</span>
+                    <span class="badge bg-secondary">{{ all_books_count }}</span>
+                </a>
+            </li>
+            {% for status in statuses %}
+            <li class="nav-item">
+                <a href="{% url 'recording:index' %}?status={{ status.id }}" class="nav-link d-flex justify-content-between align-items-center {% if status_param == status.id|stringformat:"s" %}active{% endif %}">
+                    <span>{{ status.name }}</span>
+                    <span class="badge bg-secondary">{{ status.book_count }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'recording:add_book' %}" class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center"
+           style="width: 70px; height: 70px; position: absolute; bottom: 500px; right: 20px; z-index: 10;">
+            <i class="bi bi-plus-lg" style="font-size: 1.5rem;"></i>
+        </a>
+    </div>
+    <!-- 右侧书籍列表区域 -->
+    <div class="container bg-white p-3 rounded col-md-9 col-lg-10">
+        <h1>Booklist</h1>
+        {% if books %}
+            <div class="row row-cols-4 g-3 rounded">
+                {% for book in books %}
+                    <div class="col " >
+                        <div class="card ps-3" style="width: 18rem;">
+                            {% if book.cover %}
+                                <img src="{{ book.cover.url }}" class="card-img-top" alt="{{ book.title }}" style="height: 300px;width: 250px">
+                            {% else %}
+                                <img src="{% static 'img/OIP.jpg' %}" class="card-img-top" alt="Default Cover">
+                            {% endif %}
+                            <div class="card-body " style="height: 230px;">
+                                <h5 class="card-title">{{ book.title }}</h5>
+                                <p class="card-text">{{ book.author }}</p>
+                                <span class="badge bg-success " style="font-size: 1rem; width:160px">{{ book.statues }}</span>
+                                <a href="{% url 'recording:book_detail' book.id %}" class="btn btn-primary d-block mt-2" style="width: 150px;">Particulars</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No books found. Please log in and add some books.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
